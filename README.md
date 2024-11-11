@@ -117,3 +117,4 @@ minute.
 * [YouTube: Grafana Prometheus with Heat Maps | Grafana Heatmap Histograms](https://www.youtube.com/watch?v=6oSlgW6EKK4).
 * [Akka docs: HTTP Source Streaming](https://doc.akka.io/docs/akka-http/current/routing-dsl/source-streaming-support.html).
   * [GitHub: Akka HTTP Source Streaming raw code](https://github.com/akka/akka-http/blob/master/akka-http-tests/src/test/scala/akka/http/scaladsl/server/EntityStreamingSpec.scala).
+* [Medium: Telemetry with Scala, part 1: OpenTelemetry](https://ivan-kurchenko.medium.com/telemetry-with-scala-part-1-opentelemetry-758c72a136e7)

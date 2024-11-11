@@ -6,6 +6,14 @@ services:
     ports:
       - "8080:8080"
       - "9095:9095"
+    environment:
+      JAVA_TOOLS_OPTIONS: >
+        -Dotel.javaagent.debug=true
+        -Dotel.java.global-autoconfigure.enabled=true
+      OTEL_SERVICE_NAME: api
+      OTEL_METRICS_EXPORTER: prometheus
+      OTEL_EXPORTER_PROMETHEUS_PORT: 9095
+      OTEL_EXPORTER_PROMETHEUS_HOST: 0.0.0.0
 
   performance:
     image: performance-tests-api

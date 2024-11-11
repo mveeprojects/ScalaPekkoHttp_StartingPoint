@@ -1,4 +1,5 @@
-import Dependencies._
+import Dependencies.*
+import sbt.Keys.javaOptions
 import sbtassembly.MergeStrategy
 
 name := "ScalaPekkoHttp_StartingPoint"
@@ -29,4 +30,3 @@ lazy val apiAssemblySettings = Seq(mergeStrategy, mainClass in assembly := Some(
 lazy val performanceAssemblySettings = Seq(mergeStrategy, mainClass in assembly := Some("PerformanceMain"))
 
 javaAgents += "io.opentelemetry.javaagent" % "opentelemetry-javaagent" % "2.9.0"
-javaOptions += "-Dotel.javaagent.debug=true"

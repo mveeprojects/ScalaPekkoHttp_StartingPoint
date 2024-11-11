@@ -10,6 +10,7 @@ import org.apache.pekko.http.scaladsl.server.directives.Credentials
 import org.apache.pekko.stream.scaladsl.Source
 import com.typesafe.scalalogging.LazyLogging
 import config.CustomMetrics._
+import config.OTELMetrics.randomDelayCounter
 import model.Tweet
 import model.TweetJsonProtocol._
 import service.TweetRepo.getTweets
@@ -54,6 +55,7 @@ trait AppRoutes extends LazyLogging {
     },
     get {
       path("randomdelay") {
+        randomDelayCounter.add(1)
         randomDelayEndpointCounter.increment
         def randomDurationToWait: Long = Math.floor(Math.random() * 10 * 100).toLong
         Thread.sleep(randomDurationToWait)
